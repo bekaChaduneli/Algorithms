@@ -6,7 +6,7 @@ function fibonacci(n) {
   return fib;
 }
 
-// reacursion fibonacci
+// recursive fibonacci
 
 function recursiveFibonacci(n) {
   if (n < 2) {
@@ -14,10 +14,6 @@ function recursiveFibonacci(n) {
   }
   return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
 }
-
-console.log(recursiveFibonacci(0));
-console.log(recursiveFibonacci(1));
-console.log(recursiveFibonacci(6));
 
 // O(n) - iterative
 // O(2^n) - Recursive
