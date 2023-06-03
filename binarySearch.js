@@ -16,6 +16,24 @@ function binarySearch(arr, target) {
   return -1;
 }
 
-console.log(binarySearch([-5, 2, 4, 6, 10], 10));
-console.log(binarySearch([-5, 2, 4, 6, 10], 6));
-console.log(binarySearch([-5, 2, 4, 6, 10], 20));
+// Recursive
+function recursiveBinarySearch(arr, target) {
+  return search(arr, target, 0, arr.length - 1);
+}
+
+function search(arr, target, leftIndex, rightIndex) {
+  if (leftIndex > rightIndex) {
+    return -1;
+  }
+  let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+  if (target === arr[middleIndex]) {
+    return middleIndex;
+  }
+  if (target < arr[middleIndex]) {
+    search(arr, target, leftIndex, middleIndex - 1);
+  } else {
+    search(arr, target, leftIndex - 1, middleIndex);
+  }
+}
+
+// Big-O = O(logn)
